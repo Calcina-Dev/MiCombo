@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".LoginActivity">
+
+
+    <Button
+        android:id="@+id/toregistrar"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
+        android:gravity="center"
+        android:text="¿Eres nuevo? Registrate"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:shapeAppearanceOverlay="@style/Rounded_ShapeAppearanceOverlay.MaterialComponents.TextInputLayout" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/login_activity_toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+
+        android:background="#FFFF"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:title="Inicio de Sesión"
+        app:titleTextColor="#FDA13A"></androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/edtLCorreo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:startIconDrawable="@drawable/ic_login_mail"
+        >
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/TextInputLayoutNoBorder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Correo"
+
+            app:endIconMode="clear_text"
+            app:startIconDrawable="@drawable/ic_login_mail"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:inputType="textEmailAddress"
+                android:textAlignment="center" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/edtLogin_LContrasenha"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtLCorreo"
+        >
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/TextInputLayoutNoBorder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+          android:hint="Contraseña"
+            app:endIconMode="password_toggle"
+            app:startIconDrawable="@drawable/ic_login_pass"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtLogin_Contrasenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:inputType="numberPassword"
+                android:textSize="16sp"
+                android:textAlignment="center" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+
+    <Button
+        android:id="@+id/btnLogin_Ingresar"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="20dp"
+        android:text="Ingresar"
+
+        android:textColor="#ffff"
+        app:elevation="4dp"
+        app:icon="@drawable/ic_login_enter"
+        app:iconGravity="end"
+        app:iconTint="#ffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recuperar"
+        app:shapeAppearanceOverlay="@style/Rounded_ShapeAppearanceOverlay.MaterialComponents.TextInputLayout" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="0dp"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45"
+        app:srcCompat="@drawable/micombosplash" />
+
+    <ProgressBar
+        android:id="@+id/pbLogin"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:color="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toBottomOf="@+id/btnLogin_Ingresar"
+        app:layout_constraintEnd_toEndOf="@+id/btnLogin_Ingresar"
+        app:layout_constraintStart_toStartOf="@+id/btnLogin_Ingresar"
+        app:layout_constraintTop_toTopOf="@+id/btnLogin_Ingresar" />
+
+    <Button
+        android:id="@+id/recuperar"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:text="¿olvidaste tu contraseña?"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/edtLogin_LContrasenha"
+
+        app:shapeAppearanceOverlay="@style/Rounded_ShapeAppearanceOverlay.MaterialComponents.TextInputLayout" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
